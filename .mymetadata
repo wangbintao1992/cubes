@@ -3,7 +3,7 @@
   type="WEB"
   name="cube"
   id="myeclipse.1435043347038"
-  context-root="/ASDads"
+  context-root="/cube"
   j2ee-spec="1.4"
   archive="cube.war">
   <attributes>

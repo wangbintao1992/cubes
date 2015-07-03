@@ -4,25 +4,109 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
-  <head>
-    <base href="<%=basePath%>">
-    
-    <title>My JSP 'index.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+		<meta name="description" content="Rubik’s Cube">
+		<meta name="keywords" content="Erno Rubik’s Cube">
 
-  </head>
-  
-  <body>
-   this is maven
-  </body>
+
+
+		<link rel="stylesheet" type="text/css" href="<%=path%>/build/styles/cube.css">
+		<link rel="stylesheet" type="text/css" href="<%=path%>/examples/basic/styles/base.css">
+		<link rel="icon" type="image/png" href="<%=path%>/build/media/cuber-favicon-0064x0064.png">
+		<link rel="apple-touch-icon" href="<%=path%>build/media/cuber-favicon-0144x0144.png">
+
+
+		<title>james</title>
+
+
+
+		<!-- compiled cube code -->	
+		<!-- <script charset="utf-8" src="build/cuber.js"></script> -->
+
+		<!-- compiled & minified cube code -->	
+		<!-- <script charset="utf-8" src="build/cuber.min.js"></script> -->
+
+
+
+		<script charset="utf-8" src="src/scripts/vendor/tween.min.js"></script>
+
+
+		<!-- cube source code -->
+
+
+			<!--  Three.js  -->
+			<script charset="utf-8" src="src/scripts/vendor/threejs/src/Three.js"></script>
+			<script charset="utf-8" src="src/scripts/vendor/threejs/src/core/EventDispatcher.js"></script>
+			<script charset="utf-8" src="src/scripts/vendor/threejs/src/math/Math.js"></script>
+			<script charset="utf-8" src="src/scripts/vendor/threejs/src/math/Quaternion.js"></script>
+			<script charset="utf-8" src="src/scripts/vendor/threejs/src/math/Vector2.js"></script>
+			<script charset="utf-8" src="src/scripts/vendor/threejs/src/math/Vector3.js"></script>
+			<script charset="utf-8" src="src/scripts/vendor/threejs/src/math/Box3.js"></script>
+			<script charset="utf-8" src="src/scripts/vendor/threejs/src/math/Sphere.js"></script>
+			<script charset="utf-8" src="src/scripts/vendor/threejs/src/math/Euler.js"></script>
+			<script charset="utf-8" src="src/scripts/vendor/threejs/src/math/Matrix3.js"></script>
+			<script charset="utf-8" src="src/scripts/vendor/threejs/src/math/Matrix4.js"></script>
+			<script charset="utf-8" src="src/scripts/vendor/threejs/src/core/Object3D.js"></script>
+			<script charset="utf-8" src="src/scripts/vendor/threejs/src/cameras/Camera.js"></script>
+			<script charset="utf-8" src="src/scripts/vendor/threejs/src/cameras/PerspectiveCamera.js"></script>
+			<script charset="utf-8" src="src/scripts/vendor/threejs/src/math/Ray.js"></script>
+			<script charset="utf-8" src="src/scripts/vendor/threejs/src/math/Plane.js"></script>
+
+
+			<!--  Here are the Cube guts. Enjoy.  -->
+			<script charset="utf-8" src="src/scripts/ERNO.js"></script>
+			<script charset="utf-8" src="src/scripts/vendor/CSS3DRenderer.js"></script>
+			<script charset="utf-8" src="src/scripts/utils/utils.js"></script>
+			<script charset="utf-8" src="src/scripts/utils/Number.js"></script>
+			<script charset="utf-8" src="src/scripts/utils/String.js"></script>
+			<script charset="utf-8" src="src/scripts/utils/Array.js"></script>
+			<script charset="utf-8" src="src/scripts/colors.js"></script>
+			<script charset="utf-8" src="src/scripts/directions.js"></script>
+			<script charset="utf-8" src="src/scripts/queues.js"></script>
+			<script charset="utf-8" src="src/scripts/twists.js"></script>
+			<script charset="utf-8" src="src/scripts/cubelets.js"></script>
+			<script charset="utf-8" src="src/scripts/groups.js"></script>
+			<script charset="utf-8" src="src/scripts/slices.js"></script>
+			<script charset="utf-8" src="src/scripts/folds.js"></script>
+			<script charset="utf-8" src="src/scripts/projector.js"></script>
+			<script charset="utf-8" src="src/scripts/interaction.js"></script>
+			<script charset="utf-8" src="src/scripts/controls.js"></script>
+			<script charset="utf-8" src="src/scripts/cubes.js"></script>
+			<script charset="utf-8" src="src/scripts/solvers.js"></script>
+			<script charset="utf-8" src="src/scripts/renderer.js"></script>
+
+
+
+		<!-- implementation -->	
+
+
+		<script charset="utf-8" src="examples/basic/scripts/jquery.js"></script>
+		<script charset="utf-8" src="src/scripts/extras/renderers/iecss3d.js"></script>
+		<script charset="utf-8" src="src/scripts/extras/renderers/ierenderer.js"></script>
+		<script charset="utf-8" src="src/scripts/extras/controls/locked.js"></script>
+		<script charset="utf-8" src="src/scripts/extras/deviceMotion.js"></script>
+		<script charset="utf-8" src="examples/basic/scripts/main.js"></script>			
+
+
+
+	</head>
+	<body class="graydient" >
+		<div id="container" ></div>
+		<div id="fail">
+			<h1>Sorry,</h1>
+			<h2>Cubers broken</h2>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".cube .sticker.yellow").bind("click",function(){
+				alert("I'm bule !");
+			});
+		});
+	</script>
 </html>
