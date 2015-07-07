@@ -18,19 +18,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<link rel="stylesheet" type="text/css" href="<%=path%>/examples/basic/styles/base.css">
 		<link rel="icon" type="image/png" href="<%=path%>/build/media/cuber-favicon-0064x0064.png">
 		<link rel="apple-touch-icon" href="<%=path%>build/media/cuber-favicon-0144x0144.png">
+		<link rel="stylesheet" type="text/css" href="<%=path%>/src/css/myCss.css">
 
-
-		<title>james</title>
-
-
-
-		<!-- compiled cube code -->	
-		<!-- <script charset="utf-8" src="build/cuber.js"></script> -->
-
-		<!-- compiled & minified cube code -->	
-		<!-- <script charset="utf-8" src="build/cuber.min.js"></script> -->
-
-
+		<title>james'cube</title>
 
 		<script charset="utf-8" src="src/scripts/vendor/tween.min.js"></script>
 
@@ -104,8 +94,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</body>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$(".cube .sticker.yellow").bind("click",function(){
-				alert("I'm bule !");
+		var num = [1,2,3,4,5,6,7,8,9]
+		var flag = true;
+			$('body').bind("click",function(){
+				if(flag){
+					flag = false;
+					var $t = $("div[class='sticker orange']")
+					for(var i = 0; i < $t.length; i++){
+						$t[i].innerHTML = "<span style='font-size:30px;color:black;' class='spanCls' name='hehe' id=" + i + ">" + num[i] + "</span>"
+					}
+					
+					var hehe = $("span[name='hehe']");
+					for(var i = 0 ; i < hehe.length; i ++){
+						$(hehe[i]).bind("click",function(){
+							alert($(this).attr("id"));
+						});
+					}
+				}
 			});
 		});
 	</script>
