@@ -11,9 +11,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
 		<meta name="description" content="Rubik’s Cube">
 		<meta name="keywords" content="Erno Rubik’s Cube">
-
-
-
 		<link rel="stylesheet" type="text/css" href="<%=path%>/build/styles/cube.css">
 		<link rel="stylesheet" type="text/css" href="<%=path%>/examples/basic/styles/base.css">
 		<link rel="icon" type="image/png" href="<%=path%>/build/media/cuber-favicon-0064x0064.png">
