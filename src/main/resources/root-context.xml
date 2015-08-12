@@ -29,8 +29,4 @@
 		<property name="typeAliasesPackage" value="com.cube.pojo" />
 	</bean>
 	
-	<bean id="messageDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="com.cube.dao.MessageMapper" />
-		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
-	</bean>
 </beans>
