@@ -325,8 +325,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>	
 	</body>
 		<script type="text/javascript">
-		$(document).ready(function(){
-			
+		var jq=jQuery.noConflict()
+		jq(document).ready(function(){
+
 		});
 	</script>
 </html>
