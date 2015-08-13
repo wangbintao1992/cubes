@@ -4,7 +4,7 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <!DOCTYPE html>
-<html ng-app>
+<html>
 	<head>
 		<title>blog</title>
 		<link href="<%=path%>/blog/css/bootstrap.css" rel='stylesheet'
@@ -68,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<h5 class="head">
 							Popular
 						</h5>
-						<div id="articlesList" ng-controller="articlesController">
+						<div id="articlesList" ng-app="articlesList" ng-controller="articlesController">
 						<a href="single.html">
 							<div class="editor text-center">
 								<h3>
@@ -325,9 +325,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>	
 	</body>
 		<script type="text/javascript">
-		var jq=jQuery.noConflict()
-		jq(document).ready(function(){
-
+		var j=jQuery.noConflict()
+		j(document).ready(function(){
+			
 		});
-	</script>
+		</script>
+		<script type="text/javascript">
+			var articles = angular.module("articles",[]);
+			articles.controller("articlesController",function($scope,$http){
+				$http.get('<%=basePath%>/articlesDao/find.html').success(function(response){
+					alert(response.records);
+				});
+			});
+		</script>
 </html>
